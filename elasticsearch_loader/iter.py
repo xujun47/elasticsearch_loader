@@ -29,6 +29,7 @@ def bulk_builder(bulk, config):
             # default _op_type is 'index', which will overwrites existing doc
             body['_op_type'] = 'update' 
             body['doc'] = item
+            body['doc_as_upsert'] = True
             del body['_source']
             
         yield body
