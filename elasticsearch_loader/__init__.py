@@ -116,7 +116,7 @@ def cli(ctx, **opts):
 
 
 @cli.command(name='csv')
-@click.argument('files', type=Stream(file_mode='rb'), nargs=-1, required=True)
+@click.argument('files', type=Stream(file_mode='r'), nargs=-1, required=True)
 @click.option('--delimiter', default=',', type=str, help='Default ,')
 @click.pass_context
 def _csv(ctx, files, delimiter):
